@@ -96,7 +96,25 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
 
+# Prebuilts
+PRODUCT_COPY_FILES += \
+    device/lge/hammerhead/prebuilt/Forest.ogg:system/media/audio/alarms/Forest.ogg \
+    device/lge/hammerhead/prebuilt/Journey.ogg:system/media/audio/alarms/Journey.ogg \
+    device/lge/hammerhead/prebuilt/Smooth.ogg:system/media/audio/alarms/Smooth.ogg \
+    device/lge/hammerhead/prebuilt/SMS.ogg:system/media/audio/notifications/SMS.ogg \
+    device/lge/hammerhead/prebuilt/Chorus.ogg:system/media/audio/ringtones/Chorus.ogg \
+    device/lge/hammerhead/prebuilt/Journey.ogg:system/media/audio/ringtones/Journey.ogg \
+    device/lge/hammerhead/prebuilt/Leisure.ogg:system/media/audio/ringtones/Leisure.ogg \
+    device/lge/hammerhead/prebuilt/MI.ogg:system/media/audio/ringtones/MI.ogg \
+    device/lge/hammerhead/prebuilt/Orange.ogg:system/media/audio/ringtones/Orange.ogg \
+    device/lge/hammerhead/prebuilt/Over_the_horizon.ogg:system/media/audio/ringtones/Over_the_horizon.ogg \
+    device/lge/hammerhead/prebuilt/S4_Over_the_horizon.ogg:system/media/audio/ringtones/S4_Over_the_horizon.ogg \
+    device/lge/hammerhead/prebuilt/Smooth.ogg:system/media/audio/ringtones/Smooth.ogg \
+    device/lge/hammerhead/prebuilt/Tune.ogg:system/media/audio/ringtones/Tune.ogg
 
+# Boot animation
+PRODUCT_COPY_FILES += \
+    device/lge/hammerhead/prebuilt/bootanimation.zip:system/media/bootanimation.zip
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -212,6 +230,10 @@ PRODUCT_PACKAGES += \
 # I/O Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.io.scheduler=fiops
+
+# RootExplorer
+PRODUCT_PACKAGES += \
+    01
 
 # QCOM Perf lib
 PRODUCT_PROPERTY_OVERRIDES += \
