@@ -21,7 +21,6 @@ import init.hammerhead.diag.rc
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chown system system /sys/kernel/debug/kgsl/proc
-    write /sys/block/mmcblk0/bdi/read_ahead_kb 512
 
 on init
     # See storage config details at http://source.android.com/tech/storage/
@@ -56,9 +55,6 @@ on early-boot
     setrlimit 8 67108864 67108864
 
 on boot
-    # Enable DEBUG_SUSPEND, DEBUG_EXIT_SUSPEND, and DEBUG_WAKEUP
-    write /sys/module/wakelock/parameters/debug_mask 7
-
     # bluetooth
     chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
     chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
@@ -221,8 +217,6 @@ on post-fs-data
     write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 30000
 
     # cpu-boost
-    # write /sys/module/cpu_boost/parameters/boost_ms 20
-    write /sys/module/cpu_boost/parameters/sync_threshold 1728000
     write /sys/module/cpu_boost/parameters/input_boost_freq 1190400
     write /sys/module/cpu_boost/parameters/input_boost_ms 500
 
@@ -312,15 +306,6 @@ on property:sys.boot_completed=1
 
     # enable slimport detection
     write /sys/module/slimport/parameters/enable_irq 1
-
-    # enable logging of wake up reasons to kernel logs
-    write /sys/module/msm_show_resume_irq/parameters/debug_mask 1
-
-on property:init.svc.bootanim=stopped
-    write /sys/block/mmcblk0/queue/scheduler row
-
-on property:ro.debuggable=1
-    start ssr_ramdump
 
 service rmt_storage /system/bin/rmt_storage
     class core

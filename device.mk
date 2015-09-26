@@ -196,7 +196,10 @@ PRODUCT_PACKAGES += \
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-    e2fsck
+    e2fsck \
+    mkfs.f2fs \
+    fsck.f2fs \
+    fibmap.f2fs
 
 # for off charging mode
 PRODUCT_PACKAGES += \
@@ -269,9 +272,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Enable some debug messages by default
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.debug.sensors.hal=w \
-    debug.qualcomm.sns.daemon=w \
-    debug.qualcomm.sns.libsensor1=w
+    persist.debug.sensors.hal=0 \
+    debug.qualcomm.sns.daemon=0 \
+    debug.qualcomm.sns.libsensor1=0
 
 # Ril sends only one RIL_UNSOL_CALL_RING, so set call_ring.multiple to false
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -292,7 +295,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # LTE, CDMA, GSM/WCDMA
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.force_eri_from_xml=true \
-    ro.telephony.default_network=10 \
+    ro.telephony.default_network=9 \
     telephony.lteOnCdmaDevice=1 \
     persist.radio.mode_pref_nv10=1
 
@@ -351,6 +354,37 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.input.noresample=1
 
+# Regional
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.timezone=Asia/Shanghai
+
+# Sounds
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.ringtone=MI.ogg \
+    ro.config.notification_sound=pizzicato.ogg \
+    ro.config.alarm_alert=Alarm_Beep_03.ogg
+
+# Optimize
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dexopt-flags=m=y \
+    dalvik.vm.checkjni=false \
+    ro.config.nocheckin=1 \
+    ro.kernel.android.checkjni=0 \
+    ro.kernel.checkjni=0
+
+# ART
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-flags=--no-watch-dog
+
+# ADB
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.service.adb.enable=1 \
+    persist.sys.usb.config=mtp
+
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    ro.debuggable=1
 
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/init.hammerhead.diag.rc:root/init.hammerhead.diag.rc
