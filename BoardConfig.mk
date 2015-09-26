@@ -153,6 +153,8 @@ BOARD_HARDWARE_CLASS := device/lge/hammerhead/cmhw
 
 -include vendor/lge/hammerhead/BoardConfigVendor.mk
 
+-include device/lge/hammerhead/lite.mk
+
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
 
