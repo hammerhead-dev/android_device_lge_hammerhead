@@ -24,7 +24,8 @@ PRODUCT_COPY_FILES += \
     device/lge/hammerhead/init.hammerhead.rc:root/init.hammerhead.rc \
     device/lge/hammerhead/init.hammerhead.usb.rc:root/init.hammerhead.usb.rc \
     device/lge/hammerhead/fstab.hammerhead:root/fstab.hammerhead \
-    device/lge/hammerhead/ueventd.hammerhead.rc:root/ueventd.hammerhead.rc
+    device/lge/hammerhead/ueventd.hammerhead.rc:root/ueventd.hammerhead.rc \
+    device/lge/hammerhead/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh
 
 # Input device files for hammerhead
 PRODUCT_COPY_FILES += \
