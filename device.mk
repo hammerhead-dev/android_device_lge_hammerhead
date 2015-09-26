@@ -187,12 +187,6 @@ PRODUCT_PACKAGES += \
     liblbs_core \
     flp.conf
 
-# NFC packages
-PRODUCT_PACKAGES += \
-    nfc_nci.bcm2079x.default \
-    NfcNci \
-    Tag
-
 PRODUCT_PACKAGES += \
     libion
 
