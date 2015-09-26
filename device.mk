@@ -95,9 +95,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
 
-# For SPN display
-PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/spn-conf.xml:system/etc/spn-conf.xml
+
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -209,7 +207,7 @@ PRODUCT_PACKAGES += \
 
 # I/O Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
-    sys.io.scheduler=cfq
+    sys.io.scheduler=fiops
 
 # QCOM Perf lib
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -281,7 +279,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=15
+    wifi.supplicant_scan_interval=120
 
 # Enable AAC 5.1 output
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -353,21 +351,13 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.input.noresample=1
 
-# Modem debugger
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_PACKAGES += \
-    QXDMLogger
 
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/init.hammerhead.diag.rc.userdebug:root/init.hammerhead.diag.rc
-else
-PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/init.hammerhead.diag.rc.user:root/init.hammerhead.diag.rc
-endif
+    device/lge/hammerhead/init.hammerhead.diag.rc:root/init.hammerhead.diag.rc
 
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
-
 $(call inherit-product-if-exists, hardware/qcom/msm8x74/msm8x74.mk)
 $(call inherit-product-if-exists, vendor/qcom/gpu/msm8x74/msm8x74-gpu-vendor.mk)
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339/device-bcm.mk)
+
