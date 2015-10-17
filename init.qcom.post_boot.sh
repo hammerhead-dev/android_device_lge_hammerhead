@@ -18,7 +18,7 @@ echo 0 > /sys/module/touch_synaptics_ds5/parameters/debug_mask
 echo 0 > /sys/module/lowmemorykiller/parameters/debug_level
 echo 0 > /sys/kernel/debug/msm_vidc/fw_debug_mode
 echo 0 > /sys/kernel/debug/msm_vidc/debug_level
-echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 echo 128 > /proc/sys/kernel/random/read_wakeup_threshold
 echo 256 > /proc/sys/kernel/random/write_wakeup_threshold
+# echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 
