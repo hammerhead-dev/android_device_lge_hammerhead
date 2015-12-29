@@ -101,6 +101,8 @@ PRODUCT_COPY_FILES += \
     device/lge/hammerhead/prebuilt/Forest.ogg:system/media/audio/alarms/Forest.ogg \
     device/lge/hammerhead/prebuilt/Journey.ogg:system/media/audio/alarms/Journey.ogg \
     device/lge/hammerhead/prebuilt/Smooth.ogg:system/media/audio/alarms/Smooth.ogg \
+    device/lge/hammerhead/prebuilt/GoodMorning.ogg:system/media/audio/alarms/GoodMorning.ogg \
+    device/lge/hammerhead/prebuilt/Hassium.ogg:system/media/audio/alarms/Hassium.ogg \
     device/lge/hammerhead/prebuilt/Chorus.ogg:system/media/audio/ringtones/Chorus.ogg \
     device/lge/hammerhead/prebuilt/Journey.ogg:system/media/audio/ringtones/Journey.ogg \
     device/lge/hammerhead/prebuilt/Leisure.ogg:system/media/audio/ringtones/Leisure.ogg \
