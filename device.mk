@@ -99,10 +99,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
 
-# For SPN display
-PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/spn-conf.xml:system/etc/spn-conf.xml
-
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
@@ -371,30 +367,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-swap=false
 
 # Modem debugger
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_PACKAGES += \
-    QXDMLogger
+# ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+# PRODUCT_PACKAGES += \
+#     QXDMLogger
 
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/init.hammerhead.diag.rc.userdebug:root/init.hammerhead.diag.rc
-else
-PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/init.hammerhead.diag.rc.user:root/init.hammerhead.diag.rc
-endif
+    device/lge/hammerhead/init.hammerhead.diag.rc:root/init.hammerhead.diag.rc
 
-ifneq ($(filter hammerhead_fp aosp_hammerhead_fp,$(TARGET_PRODUCT)),)
-PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/init.hammerhead_fp.rc:root/init.hammerhead_fp.rc \
-    hardware/broadcom/wlan/bcmdhd/firmware/bcm4339/fw_bcmdhd_fp.bin:system/vendor/firmware/fw_bcmdhd.bin \
-    hardware/broadcom/wlan/bcmdhd/firmware/bcm4339/fw_bcmdhd_apsta.bin:system/vendor/firmware/fw_bcmdhd_apsta.bin
-
-PRODUCT_COPY_FILES += \
-    hardware/broadcom/wlan/bcmdhd/config/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    hardware/broadcom/wlan/bcmdhd/config/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
-
-else
+# broadcom
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339/device-bcm.mk)
-endif
 
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
