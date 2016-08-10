@@ -40,9 +40,6 @@ on early-boot
     setrlimit 8 67108864 67108864
 
 on boot
-    # Enable DEBUG_SUSPEND, DEBUG_EXIT_SUSPEND, and DEBUG_WAKEUP
-    write /sys/module/wakelock/parameters/debug_mask 7
-
     # bluetooth
     chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
     chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
@@ -273,12 +270,6 @@ on property:sys.boot_completed=1
 
     # enable slimport detection
     write /sys/module/slimport/parameters/enable_irq 1
-
-    # enable logging of wake up reasons to kernel logs
-    write /sys/module/msm_show_resume_irq/parameters/debug_mask 1
-
-on property:ro.debuggable=1
-    start ssr_ramdump
 
 service rmt_storage /system/bin/rmt_storage
     class core
