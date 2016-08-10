@@ -25,7 +25,7 @@ TARGET_NO_BOOTLOADER := true
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=hammerhead user_debug=31 maxcpus=2 msm_watchdog_v2.enable=1 androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=hammerhead user_debug=31 maxcpus=2 msm_watchdog_v2.enable=1 androidboot.selinux=permissive androidboot.bootdevice=msm_sdcc.1
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
@@ -145,4 +145,18 @@ EXTENDED_FONT_FOOTPRINT := true
 # Toolchain
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-cortex_a15-linux-linaro-4.9/bin
 KERNEL_TOOLCHAIN_PREFIX := arm-cortex_a15-linux-gnueabihf-
+
+# Dexopt
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_BOOT_IMG_ONLY := false
+
+# Release
+TARGET_BUILD_TYPE := release
+
+# Buildinfo
+BUILD_NUMBER := $(shell date +%Y%m%d)
+
+# ART
+ART_BUILD_TARGET_NDEBUG := true
+ART_BUILD_HOST_NDEBUG := true
 

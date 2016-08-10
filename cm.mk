@@ -21,5 +21,15 @@ PRODUCT_MANUFACTURER := LGE
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=hammerhead \
+    BUILD_DISPLAY_ID=$(BUILD_ID) \
     BUILD_FINGERPRINT=google/hammerhead/hammerhead:6.0.1/MOB30Y/3067468:user/release-keys \
     PRIVATE_BUILD_DESC="hammerhead-user 6.0.1 MOB30Y 3067468 release-keys"
+
+# Languages
+PRODUCT_DEFAULT_LANGUAGE := zh
+PRODUCT_DEFAULT_REGION := CN
+PRODUCT_LOCALES := zh_CN zh_HK zh_TW en_US
+
+# CM Buildtype
+CM_BUILDTYPE := RELEASE
+

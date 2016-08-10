@@ -279,9 +279,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Enable some debug messages by default
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.debug.sensors.hal=w \
-    debug.qualcomm.sns.daemon=w \
-    debug.qualcomm.sns.libsensor1=w
+    persist.debug.sensors.hal=0 \
+    debug.qualcomm.sns.daemon=0 \
+    debug.qualcomm.sns.libsensor1=0
 
 # Ril sends only one RIL_UNSOL_CALL_RING, so set call_ring.multiple to false
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -289,7 +289,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=15
+    wifi.supplicant_scan_interval=180
 
 # Enable AAC 5.1 output
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -302,7 +302,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # LTE, CDMA, GSM/WCDMA
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.force_eri_from_xml=true \
-    ro.telephony.default_network=10 \
+    ro.telephony.default_network=9 \
     telephony.lteOnCdmaDevice=1 \
     persist.radio.mode_pref_nv10=1
 
@@ -366,10 +366,26 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-swap=false
 
-# Modem debugger
-# ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-# PRODUCT_PACKAGES += \
-#     QXDMLogger
+# Optimize
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.checkjni=false \
+    ro.config.nocheckin=1 \
+    ro.kernel.android.checkjni=0 \
+    ro.kernel.checkjni=0
+
+# ART
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-flags=--no-watch-dog
+
+# ADB
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.service.adb.enable=1 \
+    persist.sys.usb.config=mtp
+
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    ro.debuggable=1
 
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/init.hammerhead.diag.rc:root/init.hammerhead.diag.rc
