@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2007 The Android Open Source Project
+<!-- Copyright (C) 2010 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,23 +14,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
-    <!-- The default homepage. -->
-    <string name="homepage_base" translatable="false">https://www.google.com</string>
-
-    <!-- Bookmarks -->
-    <string-array name="bookmarks" translatable="false">
-        <item>Google</item>
-        <item>https://www.google.com</item>
-        <item>Twitter</item>
-        <item>https://twitter.com</item>
-        <item>Facebook</item>
-        <item>https://www.facebook.com</item>
-        <item>Wikipedia</item>
-        <item>https://www.wikipedia.org</item>
-        <item>Youtube</item>
-        <item>https://www.youtube.com</item>
-    </string-array>
-
+  <string-array name="search_engines" translatable="false">
+    <item>Bing</item>
+    <item>DuckDuckGo</item>
+    <item>Google</item>
+    <item>Yahoo</item>
+    <item>Google Encrypted</item>
+  </string-array>
+  <string name="default_search_engine_value">Google</string>
 </resources>
-
