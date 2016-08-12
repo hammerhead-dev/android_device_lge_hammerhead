@@ -125,6 +125,7 @@ PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/sounds/Alarm_Beep_01.ogg
     vendor/cm/prebuilt/common/media/audio/ringtones/Boxbeat.ogg:system/media/audio/ringtones/Boxbeat.ogg \
     frameworks/base/data/sounds/newwavelabs/BussaMove.ogg:system/media/audio/ringtones/BussaMove.ogg \
     frameworks/base/data/sounds/newwavelabs/Cairo.ogg:system/media/audio/ringtones/Cairo.ogg \
+    frameworks/base/data/sounds/ringtones/material/ogg/Callisto.ogg:system/media/audio/ringtones/Callisto.ogg \
     frameworks/base/data/sounds/newwavelabs/Calypso_Steel.ogg:system/media/audio/ringtones/Calypso_Steel.ogg \
     frameworks/base/data/sounds/ringtones/ogg/CanisMajor.ogg:system/media/audio/ringtones/CanisMajor.ogg \
     frameworks/base/data/sounds/newwavelabs/CaribbeanIce.ogg:system/media/audio/ringtones/CaribbeanIce.ogg \
@@ -173,7 +174,9 @@ PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/sounds/Alarm_Beep_01.ogg
     frameworks/base/data/sounds/newwavelabs/No_Limits.ogg:system/media/audio/ringtones/No_Limits.ogg \
     frameworks/base/data/sounds/newwavelabs/Noises2.ogg:system/media/audio/ringtones/Noises2.ogg \
     frameworks/base/data/sounds/newwavelabs/Noises3.ogg:system/media/audio/ringtones/Noises3.ogg \
+    frameworks/base/data/sounds/ringtones/material/ogg/Oberon.ogg:system/media/audio/ringtones/Oberon.ogg \
     frameworks/base/data/sounds/ringtones/ogg/Orion.ogg:system/media/audio/ringtones/Orion.ogg \
+    frameworks/base/data/sounds/newwavelabs/OrganDub.ogg:system/media/audio/ringtones/OrganDub.ogg \
     frameworks/base/data/sounds/newwavelabs/Paradise_Island.ogg:system/media/audio/ringtones/Paradise_Island.ogg \
     frameworks/base/data/sounds/ringtones/ogg/Pegasus.ogg:system/media/audio/ringtones/Pegasus.ogg \
     frameworks/base/data/sounds/ringtones/ogg/Perseus.ogg:system/media/audio/ringtones/Perseus.ogg \
