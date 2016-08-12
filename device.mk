@@ -101,7 +101,19 @@ PRODUCT_COPY_FILES += \
 
 # Boot animation
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/prebuilts/bootanimation.zip:system/media/bootanimation.zip
+    device/lge/hammerhead/prebuilts/media/bootanimation.zip:system/media/bootanimation.zip
+
+# Prebuilts
+PRODUCT_COPY_FILES += \
+    device/lge/hammerhead/prebuilts/media/sounds/alarms/Chorus.ogg:system/media/audio/alarms/Chorus.ogg \
+    device/lge/hammerhead/prebuilts/media/sounds/alarms/Forest.ogg:system/media/audio/alarms/Forest.ogg \
+    device/lge/hammerhead/prebuilts/media/sounds/alarms/GoodMorning.ogg:system/media/audio/alarms/GoodMorning.ogg \
+    device/lge/hammerhead/prebuilts/media/sounds/alarms/Hassium.ogg:system/media/audio/alarms/Hassium.ogg \
+    device/lge/hammerhead/prebuilts/media/sounds/alarms/Journey.ogg:system/media/audio/alarms/Journey.ogg \
+    device/lge/hammerhead/prebuilts/media/sounds/alarms/Leisure.ogg:system/media/audio/alarms/Leisure.ogg \
+    device/lge/hammerhead/prebuilts/media/sounds/ringtones/Journey.ogg:system/media/audio/ringtones/Journey.ogg \
+    device/lge/hammerhead/prebuilts/media/sounds/ringtones/MI.ogg:system/media/audio/ringtones/MI.ogg \
+    device/lge/hammerhead/prebuilts/media/sounds/ringtones/Orange.ogg:system/media/audio/ringtones/Orange.ogg
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi

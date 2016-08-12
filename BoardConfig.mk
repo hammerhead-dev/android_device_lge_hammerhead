@@ -122,6 +122,8 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 
 -include vendor/lge/hammerhead/BoardConfigVendor.mk
 
+-include device/lge/hammerhead/clean.mk
+
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
 
