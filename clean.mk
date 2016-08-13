@@ -98,6 +98,7 @@ PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/sounds/Alarm_Beep_01.ogg
     frameworks/base/data/sounds/notifications/ogg/Shaula.ogg:system/media/audio/notifications/Shaula.ogg \
     frameworks/base/data/sounds/notifications/sirius.ogg:system/media/audio/notifications/sirius.ogg \
     frameworks/base/data/sounds/notifications/ogg/Spica.ogg:system/media/audio/notifications/Spica.ogg \
+    frameworks/base/data/sounds/newwavelabs/Highwire.ogg:system/media/audio/notifications/Highwire.ogg \
     vendor/cm/prebuilt/common/media/audio/notifications/Stone.ogg:system/media/audio/notifications/Stone.ogg\
     frameworks/base/data/sounds/notifications/ogg/Strontium.ogg:system/media/audio/notifications/Strontium.ogg \
     frameworks/base/data/sounds/notifications/ogg/Syrma.ogg:system/media/audio/notifications/Syrma.ogg \
