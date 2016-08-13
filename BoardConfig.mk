@@ -148,3 +148,6 @@ BUILD_NUMBER := $(shell date +%Y%m%d)
 ART_BUILD_TARGET_NDEBUG := true
 ART_BUILD_HOST_NDEBUG := true
 
+# Remove recovery-from-boot.p
+BOARD_CANT_BUILD_RECOVERY_FROM_BOOT_PATCH := true
+
