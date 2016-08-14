@@ -39,6 +39,6 @@
     <string name="config_wifiHotSpotPass" translatable="false">googlenexus5</string>
 
     <!-- Default, comma-delimited, quick settings tiles. See QSConstants.java for a list of all available tiles -->
-    <string name="config_defaultQuickSettingsTiles">dnd,cell,cast,inversion,wifi,bt,airplane,flashlight,live_display,rotation,edit</string>
+    <string name="config_defaultQuickSettingsTiles">wifi,cell,bt,airplane,flashlight,live_display,rotation,edit</string>
 
 </resources>
