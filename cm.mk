@@ -3,6 +3,12 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 TARGET_BOOTANIMATION_HALF_RES := true
 
+# Sounds
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.ringtone=MI.ogg \
+    ro.config.notification_sound=pizzicato.ogg \
+    ro.config.alarm_alert=Alarm_Beep_03.ogg
+
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
