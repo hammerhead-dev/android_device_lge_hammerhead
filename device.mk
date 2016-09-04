@@ -237,9 +237,6 @@ PRODUCT_PACKAGES += \
     power.hammerhead
 
 PRODUCT_PACKAGES += \
-    OpenWeatherMapProvider
-
-PRODUCT_PACKAGES += \
     01
 
 PRODUCT_PROPERTY_OVERRIDES += \
