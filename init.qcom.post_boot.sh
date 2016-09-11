@@ -19,9 +19,7 @@ chmod 444 /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
 chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
 chmod 444 /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
 echo 1 > /sys/devices/system/cpu/sched_mc_power_savings
-echo 0 > /sys/block/mmcblk0/queue/add_random
 echo 0 > /sys/block/mmcblk0/queue/iostats
-echo 0 > /sys/block/mmcblk0rpmb/queue/add_random
 echo 0 > /sys/block/mmcblk0rpmb/queue/iostats
 echo 0 > /sys/module/ipc_router/parameters/debug_mask
 echo 0 > /sys/module/alarm/parameters/debug_mask
