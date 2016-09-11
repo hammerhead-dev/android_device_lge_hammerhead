@@ -6,10 +6,10 @@ echo 300000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 echo 300000 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
 echo 300000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
 echo 300000 > /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq
-echo 1574400 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-echo 1574400 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
-echo 1574400 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
-echo 1574400 > /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
+echo 2265600 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+echo 2265600 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
+echo 2265600 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
+echo 2265600 > /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
 chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 chmod 444 /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
 chmod 444 /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
@@ -36,3 +36,4 @@ echo 0 > /sys/module/touch_synaptics_ds5/parameters/debug_mask
 echo 0 > /sys/module/lowmemorykiller/parameters/debug_level
 echo 0 > /sys/kernel/debug/msm_vidc/debug_level
 echo 0 > /sys/kernel/debug/msm_vidc/fw_debug_mode
+
