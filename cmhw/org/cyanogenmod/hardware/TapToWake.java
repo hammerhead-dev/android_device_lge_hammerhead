@@ -16,6 +16,10 @@
 
 package org.cyanogenmod.hardware;
 
+import org.cyanogenmod.hardware.util.FileUtils;
+
+import java.io.File;
+
 /**
  * Tap (usually double-tap) to wake. This *should always* be supported by
  * the hardware directly. A lot of recent touch controllers have a firmware
