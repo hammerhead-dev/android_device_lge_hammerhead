@@ -1,20 +1,7 @@
 #!/system/bin/sh
 
-echo 300000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-echo 300000 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
-echo 300000 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq
-echo 300000 > /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq
-echo 2265600 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-echo 2265600 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
-echo 2265600 > /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq
-echo 2265600 > /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq
-
-echo 1 > /sys/devices/system/cpu/sched_mc_power_savings
-echo "750 750 750 760 780 790 800 820 835 870 885 915 960 1020" > /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table
-
 echo 0 > /sys/block/mmcblk0/queue/iostats
 echo 0 > /sys/block/mmcblk0rpmb/queue/iostats
-
 echo 0 > /sys/module/ipc_router/parameters/debug_mask
 echo 0 > /sys/module/alarm/parameters/debug_mask
 echo 0 > /sys/module/smp2p/parameters/debug_mask
