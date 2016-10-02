@@ -236,7 +236,9 @@ PRODUCT_PACKAGES += \
     power.hammerhead
 
 PRODUCT_PACKAGES += \
-    01
+    01 \
+    02 \
+    03
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608
