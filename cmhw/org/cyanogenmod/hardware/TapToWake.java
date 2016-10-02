@@ -45,7 +45,7 @@ public class TapToWake {
      * disabled.
      */
     public static boolean isEnabled() {
-        return Integer.parseInt(FileUtils.readOneLine(CONTROL_PATH)) == 1;
+        return "1".equals(FileUtils.readOneLine(CONTROL_PATH));
     }
 
     /**
