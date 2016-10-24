@@ -104,6 +104,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/prebuilts/media/bootanimation.zip:system/media/bootanimation.zip
 
+# Init.d
+PRODUCT_COPY_FILES += \
+    device/lge/hammerhead/prebuilts/etc/init.d/90fix:system/etc/init.d/90fix
+
 # Prebuilts
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/prebuilts/media/sounds/alarms/Chorus.ogg:system/media/audio/alarms/Chorus.ogg \
