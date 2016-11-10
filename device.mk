@@ -100,6 +100,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/thermal-engine-8974.conf:system/etc/thermal-engine-8974.conf
 
+# For SPN display
+PRODUCT_COPY_FILES += \
+    device/lge/hammerhead/spn-conf.xml:system/etc/spn-conf.xml
+
 # Boot animation
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/prebuilts/media/bootanimation.zip:system/media/bootanimation.zip
@@ -417,5 +421,4 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
-$(call inherit-product-if-exists, hardware/qcom/msm8x74/msm8x74.mk)
 $(call inherit-product-if-exists, vendor/qcom/gpu/msm8x74/msm8x74-gpu-vendor.mk)

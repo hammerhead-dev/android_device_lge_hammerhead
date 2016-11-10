@@ -5,4 +5,3 @@
         <boolean name="has_in_call_noise_suppression_bool" value="true" />
     </carrier_config>
 </carrier_config_list>
-
