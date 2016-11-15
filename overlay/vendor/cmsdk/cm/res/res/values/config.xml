@@ -20,8 +20,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Default values for display color temperature -->
-    <integer name="config_dayColorTemperature">6600</integer>
-    <integer name="config_nightColorTemperature">5000</integer>
+    <integer name="config_dayColorTemperature">6500</integer>
+    <integer name="config_nightColorTemperature">5800</integer>
 
     <!-- Enable the option to check proximity sensor when deciding whether to
          turn the screen on
@@ -30,5 +30,15 @@
     <bool name="config_proximityCheckOnWake">true</bool>
     <integer name="config_proximityCheckTimeout">100</integer>
     <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
+
+    <!-- Default wi-fi direct name -->
+    <string name="config_wifiDirectName" translatable="false">Nexus 5</string>
+    <!-- Default wi-fi hotspot ssid -->
+    <string name="config_wifiHotSpotSsid" translatable="false">Nexus 5</string>
+    <!-- Default wi-fi hotspot pass -->
+    <string name="config_wifiHotSpotPass" translatable="false">googlenexus5</string>
+
+    <!-- Default, comma-delimited, quick settings tiles. See QSConstants.java for a list of all available tiles -->
+    <string name="config_defaultQuickSettingsTiles">wifi,cell,bt,airplane,flashlight,live_display,rotation,edit</string>
 
 </resources>
