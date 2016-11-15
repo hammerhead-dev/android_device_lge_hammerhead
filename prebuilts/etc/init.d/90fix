@@ -1,0 +1,6 @@
+# Fixes
+sqlite3 /data/data/com.android.providers.settings/databases/settings.db-backup "INSERT OR REPLACE INTO global(name, value) values('device_provisioned', 1);"
+sqlite3 /data/data/com.android.providers.settings/databases/settings.db-backup "INSERT OR REPLACE INTO secure(name, value) values('user_setup_complete', 1);"
+sqlite3 /data/data/com.android.providers.settings/databases/settings.db-backup "INSERT OR REPLACE INTO global(name, value) values('captive_portal_detection_enabled', 1);"
+sqlite3 /data/data/org.cyanogenmod.cmsettings/databases/cmsettings.db "INSERT OR REPLACE INTO secure(name, value) values('cm_setup_wizard_completed', 1);"
+

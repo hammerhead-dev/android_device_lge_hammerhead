@@ -24,7 +24,8 @@ PRODUCT_COPY_FILES += \
     device/lge/hammerhead/init.hammerhead.rc:root/init.hammerhead.rc \
     device/lge/hammerhead/init.hammerhead.usb.rc:root/init.hammerhead.usb.rc \
     device/lge/hammerhead/fstab.hammerhead:root/fstab.hammerhead \
-    device/lge/hammerhead/ueventd.hammerhead.rc:root/ueventd.hammerhead.rc
+    device/lge/hammerhead/ueventd.hammerhead.rc:root/ueventd.hammerhead.rc \
+    device/lge/hammerhead/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh
 
 # Input device files for hammerhead
 PRODUCT_COPY_FILES += \
@@ -103,6 +104,26 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/spn-conf.xml:system/etc/spn-conf.xml
 
+# Boot animation
+PRODUCT_COPY_FILES += \
+    device/lge/hammerhead/prebuilts/media/bootanimation.zip:system/media/bootanimation.zip
+
+# Init.d
+PRODUCT_COPY_FILES += \
+    device/lge/hammerhead/prebuilts/etc/init.d/90fix:system/etc/init.d/90fix
+
+# Prebuilts
+PRODUCT_COPY_FILES += \
+    device/lge/hammerhead/prebuilts/media/sounds/alarms/Chorus.ogg:system/media/audio/alarms/Chorus.ogg \
+    device/lge/hammerhead/prebuilts/media/sounds/alarms/Forest.ogg:system/media/audio/alarms/Forest.ogg \
+    device/lge/hammerhead/prebuilts/media/sounds/alarms/GoodMorning.ogg:system/media/audio/alarms/GoodMorning.ogg \
+    device/lge/hammerhead/prebuilts/media/sounds/alarms/Hassium.ogg:system/media/audio/alarms/Hassium.ogg \
+    device/lge/hammerhead/prebuilts/media/sounds/alarms/Journey.ogg:system/media/audio/alarms/Journey.ogg \
+    device/lge/hammerhead/prebuilts/media/sounds/alarms/Leisure.ogg:system/media/audio/alarms/Leisure.ogg \
+    device/lge/hammerhead/prebuilts/media/sounds/ringtones/Journey.ogg:system/media/audio/ringtones/Journey.ogg \
+    device/lge/hammerhead/prebuilts/media/sounds/ringtones/MI.ogg:system/media/audio/ringtones/MI.ogg \
+    device/lge/hammerhead/prebuilts/media/sounds/ringtones/Orange.ogg:system/media/audio/ringtones/Orange.ogg
+
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
@@ -175,10 +196,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8974
 
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
-
 # GPS configuration
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/gps.conf:system/etc/gps.conf
@@ -201,8 +218,7 @@ PRODUCT_PACKAGES += \
 # NFC packages
 PRODUCT_PACKAGES += \
     nfc_nci.bcm2079x.default \
-    NfcNci \
-    Tag
+    NfcNci
 
 PRODUCT_PACKAGES += \
     libion
@@ -226,6 +242,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     power.hammerhead
+
+PRODUCT_PACKAGES += \
+    01 \
+    02 \
+    03
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608
@@ -293,7 +314,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=15
+    wifi.supplicant_scan_interval=180
 
 # Enable AAC 5.1 output
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -306,7 +327,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # LTE, CDMA, GSM/WCDMA
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.force_eri_from_xml=true \
-    ro.telephony.default_network=10 \
+    ro.telephony.default_network=9 \
     telephony.lteOnCdmaDevice=1 \
     persist.radio.mode_pref_nv10=1
 
@@ -370,31 +391,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-swap=false
 
-# Modem debugger
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_PACKAGES += \
-    QXDMLogger
-
 PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/init.hammerhead.diag.rc.userdebug:root/init.hammerhead.diag.rc
-else
-PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/init.hammerhead.diag.rc.user:root/init.hammerhead.diag.rc
-endif
+    device/lge/hammerhead/init.hammerhead.diag.rc:root/init.hammerhead.diag.rc
 
-ifneq ($(filter hammerhead_fp aosp_hammerhead_fp,$(TARGET_PRODUCT)),)
-PRODUCT_COPY_FILES += \
-    device/lge/hammerhead/init.hammerhead_fp.rc:root/init.hammerhead_fp.rc \
-    hardware/broadcom/wlan/bcmdhd/firmware/bcm4339/fw_bcmdhd_fp.bin:system/vendor/firmware/fw_bcmdhd.bin \
-    hardware/broadcom/wlan/bcmdhd/firmware/bcm4339/fw_bcmdhd_apsta.bin:system/vendor/firmware/fw_bcmdhd_apsta.bin
-
-PRODUCT_COPY_FILES += \
-    hardware/broadcom/wlan/bcmdhd/config/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    hardware/broadcom/wlan/bcmdhd/config/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
-
-else
+# broadcom
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339/device-bcm.mk)
-endif
 
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
