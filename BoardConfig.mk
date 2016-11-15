@@ -88,6 +88,8 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_KERNEL_CONFIG := cyanogenmod_hammerhead_defconfig
 TARGET_KERNEL_SOURCE := kernel/lge/hammerhead
 
+TOUCH_BOOST_DEBUG := false
+
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
 TARGET_RECOVERY_FSTAB = device/lge/hammerhead/fstab.hammerhead
