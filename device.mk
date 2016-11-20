@@ -402,6 +402,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-flags=--no-watch-dog
 
+# ADB
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.service.adb.enable=1 \
+    persist.sys.usb.config=mtp,adb
+
+# default.prop
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    ro.debuggable=1
+
 PRODUCT_COPY_FILES += \
     device/lge/hammerhead/init.hammerhead.diag.rc:root/init.hammerhead.diag.rc
 
