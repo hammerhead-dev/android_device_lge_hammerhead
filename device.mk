@@ -407,6 +407,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.adb.enable=1 \
     persist.sys.usb.config=mtp,adb
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.debug.sensors.hal=e \
+    debug.qualcomm.sns.daemon=e \
+    debug.qualcomm.sns.libsensor1=e
+
 # default.prop
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
