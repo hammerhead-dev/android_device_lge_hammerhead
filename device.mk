@@ -245,8 +245,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     01 \
-    02 \
-    03
+    02
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608
